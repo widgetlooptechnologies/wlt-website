@@ -1,27 +1,91 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>WidgetLoop Technologies</title>
-  <link rel="stylesheet" href="style.css">
-<!--   <link rel="icon" type="image/png" href="images/logo.png"> -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Widgetloop Technologies</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background-color: #0a3d62;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #74b9ff;
+    }
+
+    .main-content {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .main-content h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .main-content p {
+      font-size: 1.1rem;
+      color: #555;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-<!--     <img src="images/logo.png" alt="Company Logo" class="logo"> -->
-    <h1 style="color: #ff677d;">WidgetLoop Technologies</h1>
-    <p>We’re building something awesome. Stay tuned!</p>
-    
-    <div class="contact">
-      📧 <a href="mailto:support@widgetloop.com">support@widgetloop.com</a>
-    </div>
 
-<!--     <div class="social">
-      <a href="#" target="_blank">🐦</a>
-      <a href="#" target="_blank">📘</a>
-      <a href="#" target="_blank">📸</a>
-    </div> -->
-  </div>
+  <header>
+    <div class="logo">Widgetloop Technologies</div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="main-content">
+    <h1>Welcome to Widgetloop Technologies</h1>
+    <p>
+      App development and consulting.
+    </p>
+  </section>
+
 </body>
 </html>
