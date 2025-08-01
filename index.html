@@ -1,28 +1,277 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>WidgetLoop Technologies</title>
-  <link rel="stylesheet" href="style.css">
-<!--   <link rel="icon" type="image/png" href="images/logo.png"> -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Indie App Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #edf4fb;
+    }
+
+    header {
+      position: fixed;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #007bff;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    ul li a:hover {
+      color: #007bff;
+    }
+
+    .cta-button {
+      background: #007bff;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    section {
+      min-height: 100vh;
+      padding: 100px 40px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .home {
+      background-color: #edf4fb;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .home-text {
+      max-width: 600px;
+    }
+
+    .home-text h1 {
+      font-size: 2.5rem;
+      color: #000;
+    }
+
+    .home-text h1 span {
+      color: #c62828;
+      font-weight: 700;
+    }
+
+    .home-text p {
+      margin: 1rem 0;
+      font-size: 1rem;
+      color: #555;
+    }
+
+    .home-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      border: none;
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #007bff;
+      color: #007bff;
+      padding: 0.7rem 1.5rem;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .home-image img {
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .about {
+      background: #edf4fb;
+    }
+
+    .portfolio {
+      background: #edf4fb;
+    }
+
+    .contact {
+      background: #edf4fb;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #007bff;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    .portfolio-grid img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    input, textarea {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: inherit;
+      background-color: #fff;
+    }
+
+    button {
+      background: #007bff;
+      color: white;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    @media (max-width: 768px) {
+      .home {
+        flex-direction: column;
+      }
+
+      nav ul {
+        flex-direction: column;
+        background: white;
+        position: absolute;
+        top: 60px;
+        right: 2rem;
+        display: none;
+      }
+
+      nav ul.open {
+        display: flex;
+      }
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-<!--     <img src="images/logo.png" alt="Company Logo" class="logo"> -->
-    <h1 style="color: #ff677d;">WidgetLoop Technologies</h1>
-    <p>We’re building something awesome. Stay tuned!</p>
-    
-    <div class="contact">
-      <p>Contact us at </p>
-      📧 <a href="mailto:support@widgetloop.com">support@widgetloop.com</a>
-    </div>
+  <header>
+    <nav>
+      <div class="logo">Widgetloop</div>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <!-- <li><a href="#portfolio">Portfolio</a></li> -->
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+      <a href="#contact" class="cta-button">Let's Talk</a>
+    </nav>
+  </header>
 
-<!--     <div class="social">
-      <a href="#" target="_blank">🐦</a>
-      <a href="#" target="_blank">📘</a>
-      <a href="#" target="_blank">📸</a>
-    </div> -->
-  </div>
+  <section class="home" id="home">
+    <div class="home-text">
+      <h1><span>Complex Problems?</span><br />We Simplify and Solve.</h1>
+      <p>We simplify complex problems by breaking them into smaller parts and solving them with our technical expertise.</p>
+      <!-- <div class="home-buttons">
+        <button class="btn-primary">Get a Quote</button>
+        <button class="btn-outline">Portfolio</button>
+      </div> -->
+    </div>
+    <div class="home-image">
+      <img src="/images/home-bg.png" alt="Illustration" />
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <h2 class="section-title">About Us</h2>
+    <p style="max-width: 800px; text-align: center;">A lean team with a love for tech and clean execution — we take your ideas and make them real.</p>
+  </section>
+
+  <!-- <section class="portfolio" id="portfolio">
+    <h2 class="section-title">Our Portfolio</h2>
+    <div class="portfolio-grid">
+      <img src="https://source.unsplash.com/400x300/?app" alt="App 1" />
+      <img src="https://source.unsplash.com/400x300/?design" alt="App 2" />
+      <img src="https://source.unsplash.com/400x300/?mobile" alt="App 3" />
+      <img src="https://source.unsplash.com/400x300/?technology" alt="App 4" />
+    </div>
+  </section> -->
+
+  <section class="contact" id="contact">
+    <h2 class="section-title">Contact Us</h2>
+    <h3 style="color: #c62828;">WidgetLoop Technologies</h3>
+    <!-- <h4 style="color: teal;">Kozhikode, Kerala</h4> -->
+     <a href="mailto:support@widgetloop.com">support@widgetloop.com</a>
+    <!-- <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form> -->
+  </section>
 </body>
 </html>
